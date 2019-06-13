@@ -12,5 +12,5 @@ def main():
   c2w.saveAsTextFile('/user/cloudera/c2w/output')
   sc.stop()
   
-  if __name__ == '__main__':
-    main()
+if __name__ == '__main__':
+  main()
