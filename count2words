@@ -4,7 +4,7 @@ from pyspark import SparkContext
 
 def main():
   sc = SparkContext(appName = "count2words")
-  input_file = sc.textFile('/user/cloundera/c2w/data04.txt')
+  input_file = sc.textFile('/user/cloudera/c2w/data04.txt')
   tokens = input_file.map(lambda line : line.strip().split(" "))
   words = tokens.flatMap(lambda xs : (tuple(x) for x in zip(xs, xs[1:])))
   biwords = words.map(lambda x: (x,1))
