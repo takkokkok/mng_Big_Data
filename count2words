@@ -3,13 +3,13 @@
 from pyspark import SparkContext
 
 def main():
-  sc = SparkContext(appName = "count2words")
-  input_file = sc.textFile('/user/cloudera/c2w/data04.txt')
+  sc = SparkContext(appName = "Count2Words")
+  input_file = sc.textFile('/user/cloudera/wz/data04.txt')
   tokens = input_file.map(lambda line : line.strip().split(" "))
   words = tokens.flatMap(lambda xs : (tuple(x) for x in zip(xs, xs[1:])))
   biwords = words.map(lambda x: (x,1))
-  c2w = biwords.reduceByKey(lambda a, b: a+b)
-  c2w.saveAsTextFile('/user/cloudera/c2w/output')
+  wz = biwords.reduceByKey(lambda a, b: a+b)
+  wz.saveAsTextFile('/user/cloudera/wz/output')
   sc.stop()
   
 if __name__ == '__main__':
