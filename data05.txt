@@ -1,0 +1,6 @@
+Cat Dog Chicken Pig Rat
+Rat Chicken Pig Dog Chicken
+Chicken Chicken Rat Chicken Pig
+Dog Chicken Dog Dog Rat
+Rat Pig Chicken Dog Cat 
+Cat Pig Rat Rat Dog
